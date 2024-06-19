@@ -49,6 +49,7 @@ export interface Project {
 }
 
 export interface Archive {
+	id: string;
     fileName: string;
     creationDate: string;
     user: User;
@@ -57,6 +58,7 @@ export interface Archive {
 }
 
 export interface Team {
+	id: string;
 	teamName: string;
     description: string;
     icon: Icons;
