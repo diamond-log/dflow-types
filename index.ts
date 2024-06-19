@@ -27,8 +27,8 @@ export interface Task {
     };
     description: string;
     tags: string[];
-    projects: string[];
-    teams: string[];
+    projects: Project[];
+    teams: Team[];
     subtasks: SubTask[];
     replies: Reply[];
     createdBy: User;
