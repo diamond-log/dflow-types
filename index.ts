@@ -1,5 +1,13 @@
+export interface User {
+	id: string;
+    firstName: string;
+    lastName: string;
+    email: string;
+    photoURL: string;
+}
+
 export interface Workspace {
-	users: Users[];
+	users: User[];
 }
 
 export interface TaskGroup {
@@ -11,21 +19,69 @@ export interface TaskGroup {
 
 export interface Task {
 	id: string;
-	owners: Users[];
-	teams: Team[];
+    taskName: string;
+    responsible: TeamMember[]; // assigned
+    deadline: {
+        start: string;
+        end: string;
+    };
+    description: string;
+    tags: string[];
+    projects: string[];
+    teams: string[];
+    subtasks: SubTask[];
+    replies: Reply[];
+    createdBy: User;
+    completed: boolean;
+    completedDate: string;
+    creationDate: string;
 }
+
+export interface SubTask extends Task {};
 
 export interface Project {
 	id: string;
-	teams: Team[];
+    projectName: string;
+    creationDate: string;
+    teams: Team[];
+    icon: Icons;
 	tasksGroups: TaskGroup[];
 }
 
-export interface Team {
-	id: string;
-	users: Users[];
+export interface Archive {
+    fileName: string;
+    creationDate: string;
+    user: User;
+	thumbnail: string;
+    link: string;
 }
 
-export interface Users {
-	id: string;
+export interface Team {
+	teamName: string;
+    description: string;
+    icon: Icons;
+    privacy: "public" | "private";
+    creationDate: string;
+    owner: User[];
+    members: TeamMember[];
+    projects: Project[];
+    archives: Archive[];
+    tasks: Task[];
 }
+
+export interface TeamMember extends User {
+    entryDate: string;
+    role: string;
+}
+
+export interface Reply {
+	id: string;
+	body: string;
+	createdAt: Date;
+	author: User;
+	attachments?: string[];
+	replies: Reply[];
+	likes: User[];
+}
+
+export type Icons = "BagIcon" | "ComputerIcon" | "GearIcon" | "GraphIcon" | "HouseIcon" | "LampIcon" | "MusicNoteIcon" | "PeopleIcon"
