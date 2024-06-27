@@ -1,0 +1,1 @@
+export type Icons = "BagIcon" | "ComputerIcon" | "GearIcon" | "GraphIcon" | "HouseIcon" | "LampIcon" | "MusicNoteIcon" | "PeopleIcon";
