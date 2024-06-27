@@ -1,6 +1,7 @@
 import { Icons } from "../types/Icons";
 import { Metadata } from "./Metadata";
 import { TeamMember } from "./TeamMember";
+import { File } from "./File";
 
 export interface Team {
   uid: string;
