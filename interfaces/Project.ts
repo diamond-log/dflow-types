@@ -13,4 +13,5 @@ export interface Project {
     teams: Team[];
     members: ProjectMember[];
     privacy: "public" | "private";
+    description: string;
 }
