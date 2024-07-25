@@ -1,3 +1,4 @@
+import { ProjectMember } from './ProjectMember';
 import { Team } from "./Team";
 import { TaskGroup } from "./TaskGroup";
 import { Icons } from "../types/Icons";
@@ -10,4 +11,6 @@ export interface Project {
     name: string;
 	taskGroups: TaskGroup[];
     teams: Team[];
+    members: ProjectMember[];
+    privacy: "public" | "private";
 }
