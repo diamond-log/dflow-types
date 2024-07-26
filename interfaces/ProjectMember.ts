@@ -1,6 +1,3 @@
-import { User } from "./User";
+import { Member } from './Member';
 
-export interface ProjectMember extends User {
-    joinedAt: Date;
-    role: string;
-}
+export interface ProjectMember extends Member {}
