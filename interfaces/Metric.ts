@@ -12,7 +12,7 @@ export interface Metric {
         unitOfMeasure: "length" | "mass" | "time" | "none" | "custom";
         type: "text" | "decimal" | "integer" | "datetime" | "hour" | "boolean";
     }[];
-    assignedTo: User[];
+    assignedTo: User;
     updateGroup: (User | Team)[];
     viewsGroup: (User | Team)[];
     alerts: {
