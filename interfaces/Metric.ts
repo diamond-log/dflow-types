@@ -23,7 +23,7 @@ export interface Metric {
                 max: number;
                 min: number;
             }
-        }
-    }[];
+        }[];
+    };
     metadata: Metadata;
 }
