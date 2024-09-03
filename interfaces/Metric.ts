@@ -9,7 +9,7 @@ export interface Metric {
     updateInterval: "eventual" | "yearly" | "monthly" | "daily" | "hourly" | "workingDay" | "custom";
     attributes: {
         name: string;
-        unitOfMeasure: "length" | "mass" | "time" | "none" | "custom";
+        unitOfMeasure: "length" | "mass" | "time" | "none" | "custom" | string;
         type: "text" | "decimal" | "integer" | "datetime" | "hour" | "boolean";
     }[];
     assignedTo: User;
